@@ -1,0 +1,134 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+ body{
+background:linear-gradient(#111,#222) ;
+height: 100vh;
+/* height 100vh that is to take 100% from the screen height */
+width: 100%;
+display: flex;
+/* display flex to put the son of the body which is the container in the middle */
+justify-content: center;
+/* justify content center that to put the son which is the container in the middle horizently*/
+align-items: center;
+/* align items center that to put the son which is the container in the middle vertically*/
+}
+ 
+/* if you want to put a circle behind the content this is how you do it */
+
+body::after{
+    /*The ::after pseudo-element is used to create a decorative background effect that appears behind the main content.*/
+    content: '';
+    /*content: '';: This line creates an empty pseudo-element that will be styled using the following properties.*/
+    width: 100% ;
+    height: 100%;
+    background: red;
+    position: absolute;
+    z-index: -1;
+    clip-path: circle(40% at right 70%); /* Adjusting the size of the circle */
+}  
+
+.container{
+width:80% ;
+height: 80%;
+background: rgba(255, 255, 255, 0.1);
+border-radius: 20px; 
+overflow: hidden;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    padding: 20px 0px;
+
+}
+
+nav .logo{
+    color: #fff;
+    text-decoration: none;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 700;
+}
+
+nav ul li{
+    display: inline-block;
+    margin: 0px 06px;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+ 
+nav ul li a:hover{
+    color: rgb(211, 6, 6);
+    transition: 0.5s;
+}
+
+.content{
+    display: flex;
+    /*display: flex;
+    Importance: This property enables Flexbox layout for the .content container, allowing its child elements (.text and .imag) to be placed next to each other horizontally.*/
+    justify-content: space-between;
+    /*justify-content: space-between;
+    Importance: This property ensures that the child elements of .content are distributed evenly along the main axis (horizontally in this case).*/
+    align-items: center;
+    /*align-items center; Importance: This property centers the child elements vertically within the .content container.*/
+   height: 100%;
+   /* height: 100%; Importance: Ensures that the .content div takes up 100% of the height of its parent container.*/
+   width: 80%;
+   /* width: 80%; Importance: Sets the width of the .content div to 80% of its parent container's width.*/
+   margin: auto;
+   /* margin: auto; Importance: Centers the .content div horizontally within its parent container by automatically adjusting the left and right margins.*/
+}
+
+.content .text{
+    color: #fff;
+    width: 40%;
+}
+
+.content .text h2{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.content .text p{
+    font-size: 18px;
+    line-height: 25px;
+    margin: 10px 0px;
+    letter-spacing: 1px;
+}
+
+.content .imag{
+    width: 40%;
+}
+
+.content .imag img{
+    width: 400px;
+   
+}
+
+@media  (max-width:1141px){
+    .content .imag img{
+        width: 90%;
+  
+    }
+    .container{
+        width:80% ;
+        height: 80%;
+        border-radius: 20px; 
+        overflow: hidden;
+        }
+}
